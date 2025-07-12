@@ -11,22 +11,34 @@
         <h1>Tapiocas da Tiça</h1>
         <p>Tapioca Pronta</p>
     </header>
-      <section class="products">
-        <div class="product-card">
-            <img src="imagens/tapioca.500.jpg" alt="Massa de tapioca">
+       <main>
+          <section class="products">
+            <div class="product-card"
+              data-name="Pacote 600g"
+              data-price="5,99">
+              <img src="imagens/tapioca.500.jpg" alt="Massa de tapioca">
                 <h2>Pacote 600g</h2>
                 <p>Ideal para até 6 tapiocas.</p>
                     <span>R$ 5,99</span>
-                    <button onclick="comprar ('Pacote 600g')"> Comprar</button>
-      </div>
-    <div class="product-card">
-        <img src="imagens/tapioca.500.jpg" alt="Massa de tapioca">
-            <h2>Pacote 1kg</h2>
-            <p>Rende mais de 20 tapiocas. Qualidade premium.</p>
-            <span>R$ 14,99</span>
-            <button onclick="comprar ('Pacote 1kg')">Comprar</button>
-    </div>
-</section> 
+                    <button class="add-to-card">Adicionar ao Carrinho</button>
+            </div>
+              <div class="product-card"
+                data-name="Pacote 1 kg"
+                data-price="14,99">
+                <img src="imagens/tapioca.500.jpg" alt="Massa de tapioca">
+                    <h2>Pacote 1kg</h2>
+                    <p>Rende mais de 20 tapiocas. Qualidade premium.</p>
+                    <span>R$ 14,99</span>
+                    <button class="add-to-card">Adionar ao Carrinho</button>"
+            </div>
+         </section>
+            <section class="cart">
+              <h2>Carrinho</h2>
+              <ul id="cart-items"></ul>
+              <p id="total">Total: R$ 0,00</p>
+              <button onclick="finalizarCompra()">Finalizar Compra</button>
+          </section>
+       </main> 
 <footer>
     <p>&copy; 2025 Tapioca da Tiça - Todos os direitos reservados</p>
 </footer> 
