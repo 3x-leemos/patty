@@ -32,14 +32,18 @@ function atualizarCarrinho() {
     totalText.textContent = 'Total: R$ ${total.toFixed(2)}'; 
 }
 function finalizarCompra() {
-    if (cartItems.length === 0) {alert("Seu carrinho está vazio!"); return;
+    if (cartItems.length === 0) {
+        alert("Seu carrinho está vazio!"); return;
     }
 
-    let mensagem = "Olá! Gostaria de comprar:\n";
+    let mensagem = "*Pedido via Tapioca da Tiça*\n\n";
+        mensagem += "Olá! Gostaria de comprar:\n";
     cartItems.forEach(item => {
-        mensagem += '° ${item.name} - R${item.price.toFixed(2)}\n'; 
+        mensagem += '° ${item.name} - R$ ${item.price.toFixed(2)}\n'; 
     });
-    mensagem += totalText.textContent;
-    
-    alert(mensagem);
+    const Total = cartItems.reduce((acc, item) => acc + item.price, 0);
+    mensagem += 'Total: R$ ${total.toFixed(2)}';
+    const numeroWhatsApp  = "5561994152225";
+    const url = 'https://wa.me/${numeroWhatsaApp}?text=${encodeURIComponent(mensagem)}';
+    window.open(url, "_blank");
 }

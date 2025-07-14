@@ -1,15 +1,33 @@
-° {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-  }
+:root {
+    --bg-color: #fff8f0;
+    --text-color: #333;
+    --header-bg: #e63946;
+    --button-bg: #38a169;
+    --button-hover: #2f855a;
+    --card-bg: white;
+    --cart-bg: #f7fafc;
+    --float-color: #e63946;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #f0f0f0;
+        --header-bg: #e63946;
+        --button-bg: #2f855a;
+        --button-hover: #38a169;
+        --card-bg: #2a2a2a;
+        --cart-bg: #333;
+        --float-color: #e63946;
+    }
+}
 body {
     font-family: Arial, sans-serif;
-    background:#fff8f0;
-    color: #333
+    background: var(--bg-color);
+    color: var(--text-color)
 }
 header {
-    background: #e63946;
+    background: var(--header-bg);
     color: white;
     text-align: center;
     padding: 2rem 1rem;
@@ -30,7 +48,8 @@ main {
     animation: fadeIn 1s ease;
 }
 .product-card {
-    background: white;
+    background: var(--card-bg);
+    color: var(--text-color);
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     padding: 1rem;
@@ -46,7 +65,7 @@ main {
     border-radius: 8px;
 }
 .button {
-    background-color: #38a169;
+    background-color: var(--button-bg);
     color: white;
     border: none;
     padding: 0.6rem 1rem;
@@ -57,7 +76,7 @@ main {
     transition: backgroud 0.3s ease;
 }
 button:hover {
-    background-color: #2f855a;
+    background-color: var(--button-hover);
 }
 .cart {
     background: #f7fafc;
@@ -90,4 +109,43 @@ footer {
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse{
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--float-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
 }
