@@ -51,6 +51,6 @@ function finalizarCompra() {
     const Total = cartItems.reduce((s, i) => s + i.price, 0);
     mensagem += `\n*Total: R$ ${Total.toFixed(2).replace('.', ',')}*`;
     const numeroWhatsApp  = '5561994152225';
-    const url = "https://wa.me/${numeroWhatsaApp}?text=${encodeURIComponent(mensagem)}";
+    const url = `https://wa.me/${numeroWhatsaApp}?text=${encodeURIComponent(mensagem)}`;
 window.open(url, '_blank');
 }
