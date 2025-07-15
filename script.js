@@ -16,7 +16,7 @@ function toNumber(priceStr) {
             btn.closest('.product-card');
             const name = card.dataset.name;
             const price =
-        toNumber(card.dataset.price); // Usa função de conversão
+        parseFloat(card.dataset.price); // Usa função de conversão
 
             cartItems.push({ name, price });
             atualizarCarrinho();
@@ -49,7 +49,7 @@ function finalizarCompra() {
         mensagem += `° ${item.name} - R$ ${item.price.toFixed(2).replace('.', ',')}\n`; 
     });
     const Total = cartItems.reduce((s, i) => s + i.price, 0);
-    mensagem += `\n*Total: R$ ${total.toFixed(2).replace('.', ',')}*`;
+    mensagem += `\n*Total: R$ ${Total.toFixed(2).replace('.', ',')}*`;
     const numeroWhatsApp  = "5561994152225";
     const url = 'https://wa.me/${numeroWhatsaApp}?text=${encodeURIComponent(mensagem)}';
     window.open(url, "_blank");
